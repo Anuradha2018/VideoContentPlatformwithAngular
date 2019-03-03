@@ -10,11 +10,13 @@
   
     .video-player{
       align-self: center;
+      width: 70%;
+      height:300px;
     }
     .details {
       margin: auto;
       margin: auto;
-      overflow: scroll;
+      overflow: hidden;
       p {
         background: whitesmoke;
         padding: 20px;

@@ -4,9 +4,8 @@ body {
   .wrapper {
     display: flex;
     .video-list {
-      width: 30%;
-      height: 95vh;
-      overflow: scroll;
+      width: 40%;
+      overflow: hidden;
       border-right: 1px solid #cccccc;
   
       input {
