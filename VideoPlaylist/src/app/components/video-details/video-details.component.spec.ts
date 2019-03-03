@@ -1,7 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { CustomTimePipe } from './../../pipes/custom-time.pipe';
+import {RouterTestingModule} from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { VgStreamingModule } from 'videogular2/streaming';
 import { VideoDetailsComponent } from './video-details.component';
-
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
+import { CustomTimePipe } from 'src/app/pipes/custom-time.pipe';
+import { VideoListComponent } from './../video-list/video-list.component';
 
 describe('VideoDetailsComponent', () => {
   let component: VideoDetailsComponent;
@@ -9,10 +16,16 @@ describe('VideoDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoDetailsComponent ],
-      /*imports:[
-        CustomTimePipe
-      ]*/
+      declarations: [ VideoListComponent, VideoDetailsComponent, CustomTimePipe ],
+      imports: [
+        VgStreamingModule,
+        VgCoreModule,
+        VgControlsModule,
+        VgOverlayPlayModule,
+        VgBufferingModule,
+        RouterTestingModule,
+        HttpClientTestingModule
+       ]
     })
     .compileComponents();
   }));
