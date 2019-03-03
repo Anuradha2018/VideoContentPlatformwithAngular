@@ -9,6 +9,7 @@ import { VideoDetailsComponent } from './components/video-details/video-details.
 import { AppRoutingModule } from './app-routing.module';
 import { VideosService } from './services/videos.service';
 import { CustomTimePipe } from './pipes/custom-time.pipe';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CustomTimePipe } from './pipes/custom-time.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    
   ],
   providers: [VideosService],
   bootstrap: [AppComponent]
