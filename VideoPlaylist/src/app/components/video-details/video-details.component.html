@@ -1,8 +1,9 @@
+<!--Title-->
 <div *ngIf="videoDetail !== null" class="vid-details">
   <div class="header">
     <h1>{{ videoDetail.title }}</h1>
   </div>
-
+<!--VideoPlayer for Angular implemented here-->
   <div class="video-player">
     <vg-player>
       <video
@@ -19,10 +20,10 @@
       ></video>
     </vg-player>
   </div>
+  <!--Description & Title for the video detail page added-->
   <div class="details">
     <h1>Details</h1>
     <p><b>Title</b>: {{ videoDetail.title }}</p>
     <p><b>Description</b>: {{ videoDetail.description }}</p>
-    <p><b>Running Time</b>: {{ videoDetail.runningTime | secondsToTime }}</p>
   </div>
 </div>

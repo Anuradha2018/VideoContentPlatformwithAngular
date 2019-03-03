@@ -1,3 +1,5 @@
+<!--
+  Video list implemented, In scss file overflow can be changed to scroll to have scroll, I have made it hidden.-->
 <div class="wrapper">
   <div class="video-list">
     <input
@@ -5,10 +7,12 @@
       placeholder="Search Videos by Title"
       (keyup)="filterVideos($event)"
     />
+    <!--videos with active that is true is being displayed-->
     <div *ngIf="videos.length > 0">
       <div *ngFor="let video of videos; let i = index">
         <div *ngIf="video.active">
           <a [routerLink]="[{ outlets: { details: ['videos', i] } }]">
+            <!--Video title, thumbnail, and Running time is displayed, secondToTime Pipe added for the time conversion-->
             <div class="video-content">
               <img style="width:130px;" src="{{ video.thumbUrl }}" />
               <span class="details">
@@ -21,6 +25,7 @@
       </div>
     </div>
   </div>
+  <!--Video detail on Click-->
   <div class="video-details">
     <router-outlet name="details"></router-outlet>
   </div>
