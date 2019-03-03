@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'customTimePipe'
+  name: 'secondsToTime'
 })
-export class CustomTimePipePipe implements PipeTransform {
+export class CustomTimePipe implements PipeTransform {
 
   transform(value: number) {
     const date = new Date(null);

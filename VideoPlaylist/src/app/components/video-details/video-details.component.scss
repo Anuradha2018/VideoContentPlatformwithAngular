@@ -1,0 +1,21 @@
+.vid-details {
+    display: flex;
+    flex-direction: column;
+    .header {
+      background: whitesmoke;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  
+    .video-player{
+      align-self: center;
+    }
+    .details {
+      margin: auto;
+      margin: auto;
+      overflow: scroll;
+ 
+    }
+  }
+  

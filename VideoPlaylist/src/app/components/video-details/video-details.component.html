@@ -1,3 +1,21 @@
-<p>
-  video-details works!
-</p>
+<div *ngIf="videoDetail !== null " class="vid-details">
+    <div class="header"><h1>{{ videoDetail.title }}</h1></div>
+  
+    <div class="video-player">
+      <iframe
+      webkitallowfullscreen
+      mozallowfullscreen
+      allowfullscreen
+      width="600"
+      height="320"
+    ></iframe>
+  
+    </div>
+    <div  class="details">
+      <h1>Details</h1>
+      <p><b>Title</b>: {{ videoDetail.title }}</p>
+      <p><b>Description</b>: {{ videoDetail.description }}</p>
+      <p><b>Running Time</b>: {{ videoDetail.runningTime | secondsToTime }}</p>
+    </div>
+  </div>
+  
