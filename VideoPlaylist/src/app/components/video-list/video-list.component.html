@@ -1,3 +1,28 @@
-<p>
-  video-list works!
-</p>
+<div class="wrapper">
+  <div class="video-list">
+    <input
+      type="text"
+      placeholder="Search Videos by Title"
+      (keyup)="filterVideos($event)"
+    />
+    <div *ngIf="videos.length > 0">
+      <div  *ngFor="let video of videos; let i = index;">
+        <div *ngIf="video.active">
+          <a [routerLink]="[{ outlets: {details: ['videos', i ]}}]">
+            <div class="video-content">
+              <img style="width:130px;" src="{{video.thumbUrl}}">
+              <span class="details">
+                <h3>{{video.title}}</h3>
+                <p>Running time: {{video.runningTime | secondsToTime }}</p>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="video-details">
+      <router-outlet name="details"></router-outlet>
+
+  </div>
+</div>

@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
 import { VideoDetailsComponent } from './components/video-details/video-details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CustomTimePipePipe } from './pipes/custom-time-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoListComponent,
-    VideoDetailsComponent
+    VideoDetailsComponent,
+    CustomTimePipePipe
   ],
   imports: [
     BrowserModule,

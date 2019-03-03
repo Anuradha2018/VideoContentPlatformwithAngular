@@ -1,0 +1,40 @@
+body {
+    margin: 30px;
+  }
+  .wrapper {
+    display: flex;
+    .video-list {
+      width: 30%;
+      height: 95vh;
+      overflow: scroll;
+      border-right: 1px solid #cccccc;
+  
+      input {
+        padding: 15px;
+        width: 85%;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        padding: 4px;
+        img {
+          height: 100px;
+          margin-right: 4px;
+        }
+        .video-content {
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #cccccc;
+          .details {
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .video-details {
+      width: 70%;
+    }
+  }
+  
