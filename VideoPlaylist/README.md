@@ -1,4 +1,4 @@
-Steps and to run and relevant design Consideration
+Steps to run and relevant design Consideration
 
 As said I have tried the task with Angular
 The Application code has two components : 1. Video-list: displays the list
