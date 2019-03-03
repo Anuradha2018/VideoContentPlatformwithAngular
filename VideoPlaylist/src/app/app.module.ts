@@ -10,7 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { VideosService } from './services/videos.service';
 import { CustomTimePipe } from './pipes/custom-time.pipe';
 import { RouterModule, Routes } from '@angular/router';
-
+import { EmbedVideo } from 'ngx-embed-video';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { RouterModule, Routes } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    
+    EmbedVideo.forRoot()
   ],
   providers: [VideosService],
   bootstrap: [AppComponent]
