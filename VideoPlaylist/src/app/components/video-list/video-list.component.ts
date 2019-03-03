@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { VideosService } from './../../services/videos.service';
-
+import { Component, OnInit } from "@angular/core";
+import { VideosService } from "./../../services/videos.service";
 
 @Component({
-  selector: 'app-video-list',
-  templateUrl: './video-list.component.html',
-  styleUrls: ['./video-list.component.scss']
+  selector: "app-video-list",
+  templateUrl: "./video-list.component.html",
+  styleUrls: ["./video-list.component.scss"],
 })
 export class VideoListComponent implements OnInit {
   videos = [];
   allVideos = [];
-  constructor(private videoService: VideosService) { }
+
+  constructor(private videoService: VideosService) {}
 
   ngOnInit() {
     this.videoService.fetchVideos().subscribe(data => {
@@ -18,18 +18,17 @@ export class VideoListComponent implements OnInit {
       this.allVideos = this.videos;
     });
   }
+
   filterVideos(event: any) {
-    let searchTerm = '';
+    let searchTerm = "";
     searchTerm += event.target.value;
     const filtered = this.videos.filter(video => {
-      const test = new RegExp(searchTerm, 'gi');
+      const test = new RegExp(searchTerm, "gi");
       return video.title.match(test);
     });
-    if (searchTerm !== '') {
-      return this.videos = filtered;
+    if (searchTerm !== "") {
+      return (this.videos = filtered);
     }
     this.videos = this.allVideos;
   }
-
-
 }
