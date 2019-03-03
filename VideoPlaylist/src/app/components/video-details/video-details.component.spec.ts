@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CustomTimePipe } from './../../pipes/custom-time.pipe';
 import { VideoDetailsComponent } from './video-details.component';
+
 
 describe('VideoDetailsComponent', () => {
   let component: VideoDetailsComponent;
@@ -8,7 +9,10 @@ describe('VideoDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoDetailsComponent ]
+      declarations: [ VideoDetailsComponent ],
+      /*imports:[
+        CustomTimePipe
+      ]*/
     })
     .compileComponents();
   }));

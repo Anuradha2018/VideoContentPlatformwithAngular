@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VideosService } from './../../services/videos.service';
 
+
 @Component({
   selector: 'app-video-details',
   templateUrl: './video-details.component.html',
