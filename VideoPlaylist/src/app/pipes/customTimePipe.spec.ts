@@ -1,4 +1,4 @@
-import { CustomTimePipe } from './custom-time.pipe';
+import { CustomTimePipe } from './customTimePipe';
 
 describe('CustomTimePipe', () => {
   it('create an instance', () => {

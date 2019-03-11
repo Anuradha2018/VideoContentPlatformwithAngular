@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { VideoListComponent } from './components/video-list/video-list.component';
 import { VideoDetailsComponent } from './components/video-details/video-details.component';
 import { VideosService } from './services/videos.service';
-import { CustomTimePipe } from './pipes/custom-Time.Pipe';
+import { CustomTimePipe } from './pipes/customTimePipe';
 
 
 @NgModule({
