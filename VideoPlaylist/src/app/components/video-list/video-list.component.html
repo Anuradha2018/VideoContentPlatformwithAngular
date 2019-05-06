@@ -8,10 +8,11 @@
       (keyup)="filterVideos($event)"
     />
     <!--videos with active that is true is being displayed-->
-    <div *ngIf="videos.length > 0">
-      <div *ngFor="let video of videos; let i = index">
-        <div *ngIf="video.active">
-          <a [routerLink]="[{ outlets: { details: ['videos', i] } }]">
+    <div *ngIf="objectKeys(videosObj).length > 0">
+      <div *ngFor="let videoGroup of objectKeys(videosObj); let i = index">
+        <div>Category: {{ videoGroup }}</div>
+        <div *ngFor="let video of videosObj[videoGroup]">
+          <a [routerLink]="[{ outlets: { details: ['videos', video.id] } }]">
             <!--Video title, thumbnail, and Running time is displayed, secondToTime Pipe added for the time conversion-->
             <div class="video-content">
               <img style="width:130px;" src="{{ video.thumbUrl }}" />
