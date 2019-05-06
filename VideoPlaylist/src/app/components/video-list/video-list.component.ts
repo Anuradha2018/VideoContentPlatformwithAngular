@@ -4,7 +4,7 @@ import { VideosService } from "./../../services/videos.service";
 @Component({
   selector: "app-video-list",
   templateUrl: "./video-list.component.html",
-  styleUrls: ["./video-list.component.scss"],
+  styleUrls: ["./video-list.component.scss"]
 })
 export class VideoListComponent implements OnInit {
   videos = [];
@@ -13,22 +13,30 @@ export class VideoListComponent implements OnInit {
   constructor(private videoService: VideosService) {}
 
   ngOnInit() {
-    this.videoService.fetchVideos().subscribe(data => {
-      this.videos = this.videos.concat(data);
-      this.allVideos = this.videos;
+    this.videoService.fetchVideos().subscribe((data: object[]) => {
+      console.log("data ", data);
+      this.videos = [...data].filter(
+        (item: any) => item.browseable && item.active
+      );
+      this.allVideos = [...data];
     });
   }
 
   filterVideos(event: any) {
-    let searchTerm = "";
-    searchTerm += event.target.value;
-    const filtered = this.videos.filter(video => {
-      const test = new RegExp(searchTerm, "gi");
-      return video.title.match(test);
-    });
-    if (searchTerm !== "") {
-      return (this.videos = filtered);
+    let searchTerm = event.target.value + "";
+
+    if (searchTerm === "") {
+      this.videos = this.allVideos.filter(
+        (item: any) => item.browseable && item.active
+      );
+      return;
     }
-    this.videos = this.allVideos;
+
+    this.videos = this.allVideos
+      .filter((item: any) => item.active)
+      .filter((item: any) => item.title.includes(searchTerm));
+
+    console.log("searchTerm", [...this.videos]);
+    console.log("this.allVideos ", this.allVideos);
   }
 }

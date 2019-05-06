@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class VideosService {
-  videosUrl = 'http://video.skincoachapp.com/v1/_debug/';
+  videosUrl = "http://video.skincoachapp.com/v1/_debug/";
 
-  constructor(private http: HttpClient) {
-  }
-  fetchVideos () {
-    return this.http.get(this.videosUrl);
+  constructor(private http: HttpClient) {}
+  fetchVideos(): Observable<any[]> {
+    return <Observable<any[]>>this.http.get(this.videosUrl);
   }
 }
