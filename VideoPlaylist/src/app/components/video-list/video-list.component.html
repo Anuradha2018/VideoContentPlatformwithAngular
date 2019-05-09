@@ -9,7 +9,7 @@
     />
     <!--videos with active that is true is being displayed-->
     <div *ngIf="objectKeys(videosObj).length > 0">
-      <div *ngFor="let videoGroup of objectKeys(videosObj); let i = index">
+      <div *ngFor="let videoGroup of objectKeys(videosObj)">
         <div>Category: {{ videoGroup }}</div>
         <div *ngFor="let video of videosObj[videoGroup]">
           <a [routerLink]="[{ outlets: { details: ['videos', video.id] } }]">

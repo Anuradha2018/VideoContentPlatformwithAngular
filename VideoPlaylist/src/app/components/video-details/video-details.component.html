@@ -1,9 +1,9 @@
 <!--Title-->
-<div *ngIf="videoDetail !== null" class="vid-details">
+<div *ngIf="videoDetail" class="vid-details">
   <div class="header">
-    <h1>{{ videoDetail.title }}</h1>
+    <h1>{{ videoDetail?.title }}</h1>
   </div>
-<!--VideoPlayer for Angular implemented here-->
+  <!--VideoPlayer for Angular implemented here-->
   <div class="video-player">
     <vg-player>
       <video
