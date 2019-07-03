@@ -27,7 +27,10 @@ export class VideoListComponent implements OnInit {
         "items that are browseable and active --->",
         initiallyFiltered
       );
-      this.videosObj = _groupBy(initiallyFiltered, item => item.category);
+      this.videosObj = _groupBy(
+        initiallyFiltered,
+        (item: any) => item.category
+      );
       console.log(
         "browseable and active items that are grouped by categories --->",
         this.videosObj
@@ -52,6 +55,6 @@ export class VideoListComponent implements OnInit {
         .filter((item: any) => item.title.includes(searchTerm));
     }
 
-    this.videosObj = _groupBy(videos, item => item.category);
+    this.videosObj = _groupBy(videos, (item: any) => item.category);
   }
 }

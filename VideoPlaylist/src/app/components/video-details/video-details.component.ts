@@ -23,12 +23,15 @@ export class VideoDetailsComponent implements OnInit {
       // this.allVideos = this.allVideos.concat(data);
       this.allVideos = [...data];
       this.route.params.subscribe(params => {
-        // console.log("paramsId", params["id"]);
+        console.log("paramsId", params["id"]);
         this.videoId = +params["id"];
         console.log("videoId in the detail page", this.videoId);
+        console.log(this.allVideos);
         if (this.allVideos.length > 0) {
-          this.videoDetail = this.allVideos[this.videoId];
-          // console.log(this.videoDetail);
+          this.videoDetail = this.allVideos.find((video, index, collection) => {
+            return video["id"] === this.videoId;
+          });
+          console.log(this.videoDetail);
           this.videoUrl = this.videoDetail.videoUrl;
         }
       });
