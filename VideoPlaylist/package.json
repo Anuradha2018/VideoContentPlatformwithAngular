@@ -29,7 +29,7 @@
     "hammerjs": "^2.0.8",
     "hls.js": "^0.12.2",
     "install": "^0.12.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "lodash-es": "^4.17.15",
     "lodash.merge": "^4.6.2",
     "lodash.template": "^4.5.0",
