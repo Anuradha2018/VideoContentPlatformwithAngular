@@ -53,7 +53,7 @@
     "scss": "^0.2.4",
     "serialize-javascript": "^5.0.1",
     "set-value": "^3.0.1",
-    "tar": "^4.4.8",
+    "tar": "^4.4.18",
     "tree-kill": "^1.2.2",
     "videogular2": "^6.4.0",
     "webpack-subresource-integrity": "^1.5.2",
